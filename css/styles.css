@@ -17,7 +17,7 @@
   --text-light: #ffffff;   /* White for text on dark backgrounds */
   --background: #f9f7f7;   /* Off-white background */
   --card-bg: #ffffff;      /* White for cards */
-  --footer-bg: #2c2c2c;    /* Dark background for footer */
+  --footer-bg: #E8C5A7;    /* Peach/brown background for footer */
   
   /* Enhanced Typography */
   --font-serif: 'Merriweather', Georgia, serif;
@@ -528,7 +528,7 @@ textarea {
 /* Footer */
 footer {
   background-color: var(--footer-bg);
-  color: var(--text-light);
+  color: var(--text-dark);  /* Changed to dark text for better contrast */
   padding: 3rem 0;
   margin-top: 3rem;
   position: relative;
@@ -541,7 +541,7 @@ footer {
 }
 
 .footer-column h3 {
-  color: var(--text-light);
+  color: var(--text-dark);  /* Changed to dark text for better contrast */
   margin-bottom: 1.2rem;
 }
 
@@ -554,14 +554,14 @@ footer {
 }
 
 .footer-links a {
-  color: var(--text-light);
+  color: var(--text-dark);  /* Changed to dark text for better contrast */
   opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
 .footer-links a:hover {
   opacity: 1;
-  color: var(--text-light);
+  color: var(--text-dark);  /* Changed to dark text for better contrast */
 }
 
 .social-links {

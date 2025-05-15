@@ -153,6 +153,7 @@ header {
   font-weight: 600;
   position: relative;
   padding: 0.5rem 0;
+  color: var(--text-dark);
 }
 
 .nav a::after {
@@ -174,11 +175,11 @@ header {
 }
 
 .nav a:hover {
-  color: var(--primary);
+  color: var(--text-dark);
 }
 
 .nav a.active {
-  color: var(--primary);
+  color: var(--text-dark);
 }
 
 /* Enhanced Hero section */

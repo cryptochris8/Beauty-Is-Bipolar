@@ -11,6 +11,8 @@
   --secondary-dark: #6d2433; /* Darker garnet for depth */
   --accent: #9b6b9e;       /* Soft purple */
   --accent-dark: #7a547d;   /* Darker purple for depth */
+  --ribbon: #00A651;       /* Bipolar awareness ribbon green */
+  --ribbon-dark: #008541;  /* Darker green for depth */
   --text-dark: #2c2c2c;    /* Deeper gray for better contrast */
   --text-light: #ffffff;   /* White for text on dark backgrounds */
   --background: #f9f7f7;   /* Off-white background */
@@ -107,6 +109,14 @@ header {
   color: var(--primary);
   font-weight: bold;
   transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo img {
+  height: 2rem;
+  width: auto;
 }
 
 .logo:hover {
@@ -186,7 +196,7 @@ header {
 .btn {
   display: inline-block;
   padding: 12px 28px;
-  background-color: var(--accent);
+  background-color: var(--ribbon);
   color: var(--text-light);
   border-radius: 30px;
   font-weight: 600;
@@ -198,7 +208,7 @@ header {
 }
 
 .btn:hover {
-  background-color: var(--accent-dark);
+  background-color: var(--ribbon-dark);
   color: var(--text-light);
   transform: translateY(-2px);
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
@@ -274,7 +284,7 @@ header {
 }
 
 .tag {
-  background-color: var(--secondary);
+  background-color: var(--ribbon);
   color: var(--text-light);
   padding: 4px 12px;
   border-radius: 20px;
@@ -284,7 +294,7 @@ header {
 }
 
 .tag:hover {
-  background-color: var(--secondary-dark);
+  background-color: var(--ribbon-dark);
   transform: translateY(-1px);
 }
 
@@ -460,6 +470,7 @@ footer {
   color: var(--text-light);
   padding: 3rem 0;
   margin-top: 3rem;
+  position: relative;
 }
 
 .footer-content {
@@ -521,4 +532,51 @@ footer {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #ddd;
+}
+
+/* Add ribbon to hero section */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 64px;
+  background-image: url('../images/ribbon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+/* Add ribbon to cards */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 40px;
+  background-image: url('../images/ribbon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Add ribbon to footer */
+.footer-ribbon {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 48px;
+  background-image: url('../images/ribbon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 } 

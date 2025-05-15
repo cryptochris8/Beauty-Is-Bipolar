@@ -1,4 +1,4 @@
-# Beauty is in the Eyes of the Bipolar
+# Beauty is in the Eye of the Bipolar
 
 A personal blog exploring the daily experiences, challenges, and perspectives of a 27-year-old woman recently diagnosed with bipolar disorder.
 

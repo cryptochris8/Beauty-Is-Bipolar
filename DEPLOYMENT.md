@@ -1,6 +1,6 @@
-# Deploying "Beauty is in the Eyes of the Bipolar" on Netlify
+# Deploying "Beauty is in the Eye of the Bipolar" on Netlify
 
-This guide will help you deploy the "Beauty is in the Eyes of the Bipolar" blog on Netlify.
+This guide will help you deploy the "Beauty is in the Eye of the Bipolar" blog on Netlify.
 
 ## Prerequisites
 - A Netlify account (free at [netlify.com](https://netlify.com))
@@ -38,4 +38,4 @@ This guide will help you deploy the "Beauty is in the Eyes of the Bipolar" blog 
 - Test all forms and functionality after deployment
 
 ## Support
-If you encounter any issues with deployment, refer to the [Netlify documentation](https://docs.netlify.com/) or contact Netlify support. 
+If you encounter any issues with deployment, refer to the [Netlify documentation](https://docs.netlify.com/) or contact Netlify support. y to DEPLOYMENT.m...

@@ -1,20 +1,23 @@
 /* 
  * Beauty is in the Eyes of the Bipolar - Main Stylesheet
- * A calming, accessible design using pastel and muted colors
+ * A modern, engaging design with smooth animations and enhanced visuals
  */
 
 :root {
-  /* Color palette - soft, calming pastels and muted tones */
-  --primary: #a3c9dc;      /* Soft blue */
-  --secondary: #e8d3d3;    /* Soft pink */
-  --accent: #c2d8b9;       /* Soft sage green */
-  --text-dark: #4a4a4a;    /* Dark gray for text */
+  /* Enhanced color palette with garnet and purple */
+  --primary: #89b9d0;      /* Refined soft blue */
+  --primary-dark: #6a9cb3;  /* Darker blue for depth */
+  --secondary: #923043;    /* Garnet */
+  --secondary-dark: #6d2433; /* Darker garnet for depth */
+  --accent: #9b6b9e;       /* Soft purple */
+  --accent-dark: #7a547d;   /* Darker purple for depth */
+  --text-dark: #2c2c2c;    /* Deeper gray for better contrast */
   --text-light: #ffffff;   /* White for text on dark backgrounds */
   --background: #f9f7f7;   /* Off-white background */
   --card-bg: #ffffff;      /* White for cards */
-  --footer-bg: #e6e6e6;    /* Light gray for footer */
+  --footer-bg: #2c2c2c;    /* Dark background for footer */
   
-  /* Typography */
+  /* Enhanced Typography */
   --font-serif: 'Merriweather', Georgia, serif;
   --font-sans: 'Open Sans', Helvetica, Arial, sans-serif;
 }
@@ -31,43 +34,51 @@ body {
   line-height: 1.6;
   color: var(--text-dark);
   background-color: var(--background);
+  background-image: radial-gradient(var(--secondary) 0.5px, transparent 0.5px), radial-gradient(var(--secondary) 0.5px, var(--background) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
 }
 
-/* Typography */
+/* Enhanced Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: var(--text-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
 }
 
 p {
   margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
 a {
   color: var(--primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 a:hover {
-  color: #7cabc9;
+  color: var(--primary-dark);
 }
 
-/* Layout */
+/* Enhanced Layout */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -75,12 +86,13 @@ a:hover {
 }
 
 header {
-  background-color: var(--card-bg);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 1rem 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(8px);
 }
 
 .header-content {
@@ -91,142 +103,242 @@ header {
 
 .logo {
   font-family: var(--font-serif);
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--primary);
   font-weight: bold;
+  transition: transform 0.3s ease;
 }
 
-/* Navigation */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Enhanced Navigation */
 .nav {
   display: flex;
   list-style: none;
-}
-
-.nav li {
-  margin-left: 2rem;
+  gap: 2rem;
 }
 
 .nav a {
   font-weight: 600;
   position: relative;
+  padding: 0.5rem 0;
 }
 
 .nav a::after {
   content: '';
-  display: block;
-  height: 2px;
-  width: 0;
-  background-color: var(--primary);
   position: absolute;
-  bottom: -5px;
-  transition: width 0.3s ease;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
 }
 
 .nav a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
-/* Hero section */
+/* Enhanced Hero section */
 .hero {
   background-color: var(--secondary);
-  padding: 5rem 0;
+  background-image: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+  padding: 6rem 0;
   text-align: center;
   margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  color: var(--text-dark);
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   max-width: 700px;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem;
+  animation: fadeInUp 1s ease-out;
+  color: var(--text-light);
 }
 
+/* Enhanced Button Styles */
 .btn {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: var(--primary);
+  padding: 12px 28px;
+  background-color: var(--accent);
   color: var(--text-light);
   border-radius: 30px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn:hover {
-  background-color: #7cabc9;
+  background-color: var(--accent-dark);
   color: var(--text-light);
   transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Main content */
-main {
-  padding: 2rem 0;
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog card grid */
+/* Enhanced Blog Cards */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2.5rem;
 }
 
 .card {
   background-color: var(--card-bg);
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 20px 25px -5px rgba(146, 48, 67, 0.1), 0 10px 10px -5px rgba(146, 48, 67, 0.04);
 }
 
 .card-img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
 }
 
 .card-content {
-  padding: 1.5rem;
+  padding: 1.8rem;
 }
 
 .card-date {
   font-size: 0.9rem;
-  color: #888;
-  margin-bottom: 0.5rem;
+  color: #666;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
 }
 
 .card-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .card-excerpt {
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: #4a4a4a;
 }
 
+/* Enhanced Tags */
 .card-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .tag {
-  background-color: var(--accent);
-  color: var(--text-dark);
-  padding: 3px 10px;
+  background-color: var(--secondary);
+  color: var(--text-light);
+  padding: 4px 12px;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background-color: var(--secondary-dark);
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    margin: 0 1rem;
+  }
 }
 
 /* Blog post */
@@ -345,7 +457,7 @@ textarea {
 /* Footer */
 footer {
   background-color: var(--footer-bg);
-  color: var(--text-dark);
+  color: var(--text-light);
   padding: 3rem 0;
   margin-top: 3rem;
 }
@@ -357,6 +469,7 @@ footer {
 }
 
 .footer-column h3 {
+  color: var(--text-light);
   margin-bottom: 1.2rem;
 }
 
@@ -366,6 +479,17 @@ footer {
 
 .footer-links li {
   margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--text-light);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  color: var(--text-light);
 }
 
 .social-links {
@@ -378,7 +502,7 @@ footer {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -388,7 +512,7 @@ footer {
 }
 
 .social-link:hover {
-  background-color: #7cabc9;
+  background-color: var(--secondary-dark);
   transform: translateY(-3px);
 }
 
@@ -397,47 +521,4 @@ footer {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #ddd;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .header-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .nav {
-    margin-top: 1rem;
-  }
-  
-  .nav li {
-    margin: 0 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-  
-  .about {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .nav li {
-    margin: 0;
-  }
-  
-  .hero {
-    padding: 3rem 0;
-  }
-  
-  .hero h1 {
-    font-size: 2rem;
-  }
 } 

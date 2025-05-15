@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Beauty is in the Eyes of the Bipolar</title>
+    <meta name="description" content="Get in touch with the author of 'Beauty is in the Eyes of the Bipolar' for questions, feedback, or collaboration requests.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional styles for contact page */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-method {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        
+        .message-sent {
+            display: none;
+            background-color: var(--accent);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .error-message {
+            color: #d9534f;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">Beauty is in the Eyes of the Bipolar</a>
+            <nav>
+                <ul class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <button class="mobile-nav-toggle" aria-expanded="false" aria-controls="nav">
+                    <span class="sr-only">Menu</span>
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Me</h1>
+            <p>Have questions or suggestions? I'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container">
+            <section>
+                <div class="contact-container">
+                    <div>
+                        <div class="contact-info">
+                            <h2>Get in Touch</h2>
+                            <p>
+                                Whether you have questions about bipolar disorder, want to share your own story, 
+                                or have suggestions for topics you'd like me to cover, I welcome your messages.
+                            </p>
+                            <p>
+                                Please note that while I do my best to respond to all inquiries, it may take 
+                                some time for me to get back to you. If you're seeking immediate mental health 
+                                support, please visit the <a href="resources.html">Resources</a> page for crisis 
+                                hotlines and other services.
+                            </p>
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Email</h3>
+                                        <p><a href="mailto:hello@beautyintheeyesofthebipolar.com">hello@beautyintheeyesofthebipolar.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-share-alt"></i>
+                                    </div>
+                                    <div>
+                                        <h3>Social Media</h3>
+                                        <p>Connect with me on <a href="#">Instagram</a>, <a href="#">Twitter</a>, or <a href="#">Pinterest</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2>Send a Message</h2>
+                        <form id="contact-form" class="form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                                <div class="error-message" id="name-error">Please enter your name</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                                <div class="error-message" id="email-error">Please enter a valid email address</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" required>
+                                <div class="error-message" id="subject-error">Please enter a subject</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" required></textarea>
+                                <div class="error-message" id="message-error">Please enter your message</div>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                            <div class="message-sent" id="message-sent">
+                                <strong>Thank you!</strong> Your message has been sent successfully. I'll get back to you as soon as possible.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" id="faq1-header">
+                            <span>Do you offer coaching or consulting services?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content" id="faq1-content">
+                            <p>
+                                I'm not currently offering formal coaching services. As someone who is still 
+                                on my own journey with bipolar disorder, I focus on sharing personal experiences 
+                                rather than providing professional advice. For professional support, please 
+                                consult with licensed mental health providers.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" id="faq2-header">
+                            <span>Can I share my story on your blog?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content" id="faq2-content">
+                            <p>
+                                Yes! I'm always interested in featuring guest posts from others living with 
+                                bipolar disorder. Please use the contact form above to send a brief pitch 
+                                of your story, and we can discuss the possibility of featuring it on the blog.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" id="faq3-header">
+                            <span>Do you speak at events or workshops?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="accordion-content" id="faq3-content">
+                            <p>
+                                On a limited basis, yes. I occasionally speak at mental health awareness events 
+                                and workshops about my personal experience with bipolar disorder. For speaking 
+                                inquiries, please provide details about your event in the contact form above.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Beauty is in the Eyes of the Bipolar</h3>
+                    <p>
+                        A personal journey through bipolar disorder, 
+                        finding beauty in the everyday chaos, and embracing 
+                        the unique perspective it brings.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Beauty is in the Eyes of the Bipolar. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script>
+        // Contact form validation and submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const messageSent = document.getElementById('message-sent');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Simple form validation
+                    let isValid = true;
+                    
+                    const name = document.getElementById('name');
+                    const email = document.getElementById('email');
+                    const subject = document.getElementById('subject');
+                    const message = document.getElementById('message');
+                    
+                    // Reset error messages
+                    document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+                    
+                    // Validate name
+                    if (!name.value.trim()) {
+                        document.getElementById('name-error').style.display = 'block';
+                        isValid = false;
+                    }
+                    
+                    // Validate email
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!email.value.trim() || !emailPattern.test(email.value)) {
+                        document.getElementById('email-error').style.display = 'block';
+                        isValid = false;
+                    }
+                    
+                    // Validate subject
+                    if (!subject.value.trim()) {
+                        document.getElementById('subject-error').style.display = 'block';
+                        isValid = false;
+                    }
+                    
+                    // Validate message
+                    if (!message.value.trim()) {
+                        document.getElementById('message-error').style.display = 'block';
+                        isValid = false;
+                    }
+                    
+                    // If valid, "submit" the form (in a real implementation, this would send data to a server)
+                    if (isValid) {
+                        // In a real implementation, you would send the form data to a server here
+                        messageSent.style.display = 'block';
+                        contactForm.reset();
+                        
+                        // Scroll to success message
+                        messageSent.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+            
+            // FAQ Accordion
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    header.classList.toggle('active');
+                    
+                    if (header.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

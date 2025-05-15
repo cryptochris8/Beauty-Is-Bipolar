@@ -125,7 +125,7 @@ header {
 .logo {
   font-family: var(--font-serif);
   font-size: 2rem;
-  color: var(--primary);
+  color: var(--text-dark);
   font-weight: bold;
   transition: transform 0.3s ease;
   display: flex;

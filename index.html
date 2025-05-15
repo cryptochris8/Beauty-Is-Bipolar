@@ -135,9 +135,10 @@
                     Join my newsletter for weekly insights, resources, and updates on living 
                     authentically with bipolar disorder.
                 </p>
-                <form id="newsletter-form" class="form">
+                <form id="newsletter-form" class="form" name="newsletter" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="newsletter">
                     <div class="form-group">
-                        <input type="email" id="email" placeholder="Your email address" required>
+                        <input type="email" id="newsletter-email" name="email" placeholder="Your email address" required>
                     </div>
                     <button type="submit" class="btn">Subscribe</button>
                 </form>

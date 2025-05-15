@@ -543,7 +543,7 @@ footer {
   transform: translateX(-50%);
   width: 40px;
   height: 64px;
-  background-image: url('../images/bipolar-awareness.png');
+  background-image: url('/images/bipolar-awareness.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.8;
@@ -557,7 +557,7 @@ footer {
   right: 10px;
   width: 25px;
   height: 40px;
-  background-image: url('../images/bipolar-awareness.png');
+  background-image: url('/images/bipolar-awareness.png');
   background-size: contain;
   background-repeat: no-repeat;
   opacity: 0.6;
@@ -576,7 +576,7 @@ footer {
   transform: translateX(-50%);
   width: 30px;
   height: 48px;
-  background-image: url('../images/bipolar-awareness.png');
+  background-image: url('/images/bipolar-awareness.png');
   background-size: contain;
   background-repeat: no-repeat;
 } 
